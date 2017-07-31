@@ -34,6 +34,7 @@ def createWordList(document):
 
 	return wordList
 
+
 def createGrid(gridFile):
 	"""Create 8x8 grid of letters from file.
 	"""
@@ -141,3 +142,5 @@ def main():
 
 if __name__ == '__main__':
 	sys.exit(main())
+	
+
