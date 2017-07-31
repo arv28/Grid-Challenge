@@ -34,7 +34,6 @@ def createWordList(document):
 
 	return wordList
 
-
 def createGrid(gridFile):
 	"""Create 8x8 grid of letters from file.
 	"""
