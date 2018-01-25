@@ -27,6 +27,7 @@ def createWordList(document):
       for line in fp:
         for word in line.strip().split():
           word = prog.sub('', word).lower()
+          word = word.lower()
           if word:
             wordList.add(word)
   except IOError as e:
