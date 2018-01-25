@@ -66,7 +66,7 @@ def getNextPosition(x, y):
   """Return next possible move from the current position.
   """
   for move in MOVES:
-    pos = (x + move[0], y + move[1]) 
+    pos = (x + move[0], y + move[1])
     if 0 <= pos[0] < GRID_SIZE and 0 <= pos[1] < GRID_SIZE:
       yield pos
 
@@ -82,7 +82,7 @@ def filterWords(wordSet, pos, char):
 
 def getCandidateWords(wordSet, grid, curX, curY, charPos=0, prefixStr='', longest_word=''):
   """Recursively traverse the grid and return the longest word from the starting position.
-  """ 
+  """
 
   # reduce the wordList size to set of words that matches the startLetter in charPos
   startLetter = grid[curX][curY]
@@ -102,7 +102,7 @@ def getCandidateWords(wordSet, grid, curX, curY, charPos=0, prefixStr='', longes
   # do this for 8 next possible moves
   for x, y in getNextPosition(curX, curY):
     longest_word = getCandidateWords(wordSet, grid, x, y, charPos+1, prefixStr, longest_word)
-    
+
   return longest_word
 
 def findLongestWord(wordList, grid):
@@ -114,7 +114,7 @@ def findLongestWord(wordList, grid):
   for i in xrange(GRID_SIZE):
     for j in xrange(GRID_SIZE):
       word = getCandidateWords(wordList, grid, i, j)
-      if len(word) > len(longest_word): 
+      if len(word) > len(longest_word):
         longest_word = word
         x, y = i, j
       #print "longest word at (%s, %s): %s" % (i, j, longest)
@@ -124,7 +124,7 @@ def findLongestWord(wordList, grid):
 def main():
   parser = argparse.ArgumentParser(description='Programming Problem - '
     'Return the longest word from the list that can be produced from a 8x8 grid of letters')
-  parser.add_argument('textfile', 
+  parser.add_argument('textfile',
                     help='path to the text file to test candidate words')
   parser.add_argument('gridfile',
                     help='file containing 8x8 grid of letters')
@@ -142,8 +142,3 @@ def main():
 
 if __name__ == '__main__':
   sys.exit(main())
-  
-
-  
-
-
